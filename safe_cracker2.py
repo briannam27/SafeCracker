@@ -72,12 +72,13 @@ class SafeCracker:
         self.play_again_button.config(state=tk.DISABLED) #disables the play again button until the game ends
         self.game_on = True 
 
-        if game_type == "normal":
-            self.target = random.randint(*TARGET_RANGE) #sets up the target number for normal mode
-        else:
+        if game_type == "timer":
             self.target = random.randint(*TIMER_MODE_RANGE) #sets up the target number for timer mode
             self.remaining_timer = TIME #sets up the timer's time
             self.update_timer() #calls the update timer function to run the active timer 
+        else:
+            self.timer.config(text="")
+            self.target = random.randint(*TARGET_RANGE) #sets up the target number for normal mode
         
         self.encrypted_target = self.target + KEY
 
