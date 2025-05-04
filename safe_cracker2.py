@@ -37,7 +37,7 @@ class SafeCracker:
         self.subtitle.pack(pady=5)
 
         #makes the button to make the game go into timed mode
-        self.timer_button = tk.Button(self.window, text="Timer Mode (1m)", command=lambda: self.start_game("timer"))
+        self.timer_button = tk.Button(self.window, text="Timer Mode (30s)", command=lambda: self.start_game("timer"))
         self.timer_button.pack(pady=10)
         
         #makes the button to make the game go into normal mode (three guesses)
