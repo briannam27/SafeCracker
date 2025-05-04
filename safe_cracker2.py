@@ -34,7 +34,7 @@ class SafeCracker:
 
         #text having the user choose what type of game mode they'll play
         self.subtitle = tk.Label(self.window, text="To play, choose a mode", font=("Roboto", 15))
-        self.subtitle.pack()
+        self.subtitle.pack(pady=5)
 
         #makes the button to make the game go into timed mode
         self.timer_button = tk.Button(self.window, text="Timer Mode (1m)", command=lambda: self.start_game("timer"))
@@ -84,11 +84,9 @@ class SafeCracker:
         #changes the subtitle depending on the game mode
         if game_type == "timer":
             #sets up the subtitle that has a quick instructional sentence for the user
-            self.subtitle = tk.Label(self.window, text=f"Guess a number between {TARGET_RANGE[0]} and {TARGET_RANGE[1]} to try to crack the safe")
-            self.subtitle.pack(pady=5, padx=10)
+            self.subtitle.config(text=f"Guess a number between {TARGET_RANGE[0]} and {TARGET_RANGE[1]} to try to crack the safe")
         else:
-            self.subtitle = tk.Label(self.window, text=f"Guess a number between {TIMER_MODE_RANGE[0]} and {TIMER_MODE_RANGE[1]} to try to crack the safe")
-            self.subtitle.pack(pady=5, padx=10)
+            self.subtitle.config(text=f"Guess a number between {TIMER_MODE_RANGE[0]} and {TIMER_MODE_RANGE[1]} to try to crack the safe")
 
     # function that updates the timer
     def update_timer(self):
