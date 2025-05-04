@@ -26,7 +26,7 @@ class SafeCracker:
 
         #sets up the subtitle that has a quick instructional sentence for the user
         self.subtitle = tk.Label(self.window, text=f"Guess a number between {TARGET_RANGE[0]} and {TARGET_RANGE[1]} to try to crack the safe")
-        self.subtitle.pack(pady=5)
+        self.subtitle.pack(pady=5, padx=10)
 
         #sets up the user input
         self.user_input = tk.Entry(self.window)
@@ -43,7 +43,7 @@ class SafeCracker:
 
         #makes the button for the user to reset the game
         self.play_again_button = tk.Button(self.window, text="Play again!", command=self.reset, state=tk.DISABLED)
-        self.play_again_button.pack()
+        self.play_again_button.pack(pady=20)
 
     # function to check the user's guess against the encryted target
     def check(self):
@@ -52,7 +52,7 @@ class SafeCracker:
             self.tries += 1 #updates the tries count 
 
             if self.tries > MAX_ATTEMPTS: 
-                self.result.config(text=f"You didn't crack the safe :( . The safe's code was {self.target}. Play again!)")
+                self.result.config(text=f"You didn't crack the safe :( . The safe's code was {self.target}. Play again!")
                 self.end() #calls the end() function to terminate the game
                 return
             
