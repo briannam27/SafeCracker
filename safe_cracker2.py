@@ -1,4 +1,5 @@
 import tkinter as tk #for visuals
+from tkinter import PhotoImage #for lock image
 import random #going to be used for generating the target number
 
 #CONSTANTS
@@ -27,6 +28,11 @@ class SafeCracker:
         #sets up the game title
         self.game_title = tk.Label(self.window, text="Crack That Safe!", font=("Roboto", 20, "bold"))
         self.game_title.pack(pady=15)
+
+        #adds the lock picture
+        self.lock = PhotoImage(file="safe-clipart-md.png")
+        self.lock_caption = tk.Label(self.window, image=self.lock)
+        self.lock_caption.pack(pady=10)
 
         #text showing how much of the timer is left
         self.timer = tk.Label(self.window, text="", font=("Roboto", 15, "bold"))
