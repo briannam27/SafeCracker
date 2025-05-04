@@ -6,7 +6,7 @@ KEY = 4 #encrytion aspect
 MAX_ATTEMPTS = 3 #user gets three attempts to guess the code of the safe
 TARGET_RANGE = (1,50) #range that the target could be
 TIMER_MODE_RANGE = (1,100) #larger target range for the timer mode
-TIME = 60
+TIME = 30
 
 class SafeCracker:
     
