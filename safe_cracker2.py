@@ -82,7 +82,7 @@ class SafeCracker:
         self.encrypted_target = self.target + KEY
 
         #changes the subtitle depending on the game mode
-        if game_type == "timer":
+        if game_type == "normal":
             #sets up the subtitle that has a quick instructional sentence for the user
             self.subtitle.config(text=f"Guess a number between {TARGET_RANGE[0]} and {TARGET_RANGE[1]} to try to crack the safe")
         else:
